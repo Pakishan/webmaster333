@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inicio - Chile Motors</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+  </head>
+  <body>
+    <!-- Menú -->
+    <nav class="navbar navbar-expand-md sticky-top py-3 navbar-dark bg-dark">
+      <div class="container">
+        <a href="{% url 'index' %}" class="navbar-brand"><span class="text-primary">CHILE</span>motors</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-start" aria-controls="navbar-start" aria-expanded="false" aria-label="toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar-start">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'index' %}">Home</a>
+            </li>
+            <li class="nav-item">
+             <a class="nav-link" href="{% url 'nosotros' %}">Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'servicios' %}">Servicios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'productos' %}">Productos</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!---Carrito-->
+      <!-- Botón para abrir el offcanvas del carrito -->
+      <button class="btn btn-success" type="button" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" aria-controls="cartOffcanvas">
+        Carrito
+      </button>
+    </nav>
+    <!-- Offcanvas del carrito -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="cartOffcanvasLabel">Tu carrito de compras</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <!-- Contenido del carrito -->
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Producto</th>
+              <th scope="col">Precio</th>
+              <th scope="col">Cantidad</th>
+              <th scope="col">Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- productos en el carrito -->
+            <tr>
+              <td>Producto 1</td>
+              <td>$10.00</td>
+              <td>2</td>
+              <td>$20.00</td>
+            </tr>
+            <tr>
+              <td>Producto 2</td>
+              <td>$15.00</td>
+              <td>1</td>
+              <td>$15.00</td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- Botones-->
+      </div>
+      <div class="offcanvas-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="offcanvas">Cerrar</button>
+        <button type="button" class="btn btn-success">Pagar</button>
+      </div>
+    </div>
+    <!-- Cierre Menú -->
+
+    <!-- Carrusel -->
+    <div id="carouselE1" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselE1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselE1" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselE1" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="{% static 'img/car1.jpg' %}" class="d-block w-100" alt="" />
+          <div class="carousel-caption">
+            <h5>Los mejores motores</h5>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+            </p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'img/car2.png' %}" class="d-block w-100" alt="" />
+          <div class="carousel-caption">
+            <h5>Los mejores motores</h5>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+            </p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'img/car3.jpg' %}" class="d-block w-100" alt="" />
+          <div class="carousel-caption">
+            <h5>Los mejores motores</h5>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+            </p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselE1" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselE1" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <section class="services">
+      <h2 class="text-center">Nuestros Servicios</h2>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-12 col-lg-4 mb-3">
+            <div class="card-text-white text-center bg-car1 pb-2">
+              <div class="card-body">
+                <h3 class="card-title">Faros antinieblas</h3>
+                <p class="card-p">
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s, when an unknown
+                  printer took a galley of type and scrambled it to make a type
+                </p>
+                <a href="{% url 'planes' %}" class="btn bg-primary text-white">Apreta Aqui</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-12 col-lg-4 mb-3">
+            <div class="card-text-white text-center bg-car2 pb-2">
+              <div class="card-body">
+                <h3 class="card-title">Pintado moderno</h3>
+                <p class="card-p">
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s, when an unknown
+                  printer took a galley of type and scrambled it to make a type
+                </p>
+                <a href="{% url 'planes' %}" class="btn bg-primary text-white">Apreta Aqui</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-12 col-lg-4 mb-3">
+            <div class="card-text-white text-center bg-car3 pb-2">
+              <div class="card-body">
+                <h3 class="card-title">Aceite nuevo</h3>
+                <p class="card-p">
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s, when an unknown
+                  printer took a galley of type and scrambled it to make a type
+                </p>
+                <a href="{% url 'planes' %}" class="btn bg-primary text-white">Apreta Aqui</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Login</title>
+</head>
+<body>
+
+    <div class="registro-contenedor">
+        <div class="registro-titulo">Registro</div>
+        <form id="registro-formulario-validacion" method="post" action="{% url 'nombre_de_tu_vista_de_registro' %}">
+            {% csrf_token %}
+            <div class="registro-formulario-grupo">
+                <span>Nombre</span>
+                <input type="text" id="nombre" name="nombre" placeholder="Ingrese nombre" required>
+                <small>Por favor ingrese Nombre</small>
+            </div>
+            <div class="registro-formulario-grupo">
+                <span>Usuario</span>
+                <input type="text" id="usuario" name="usuario" placeholder="Ingrese usuario" required>
+                <small>Por favor ingrese Usuario</small>
+            </div>
+            <div class="registro-formulario-grupo">
+                <span>Email</span>
+                <input type="email" id="email" name="email" placeholder="Ingrese Email" required>
+                <small>Por favor ingrese Email</small>
+            </div>
+            <div class="registro-formulario-grupo">
+                <span>Teléfono</span>
+                <input type="text" id="telefono" name="telefono" placeholder="Ingrese Teléfono" required>
+                <small>Por favor ingrese Teléfono</small>
+            </div>
+            <div class="registro-formulario-grupo">
+                <span>Contraseña</span>
+                <input type="password" id="password" name="password" placeholder="Ingrese Contraseña" required>
+                <small>Por favor ingrese Contraseña</small>
+            </div>
+            <div class="registro-formulario-grupo">
+                <span>Confirmar contraseña</span>
+                <input type="password" id="confirm-password" name="confirm_password" placeholder="Confirmar contraseña" required>
+                <small>Por favor confirme contraseña</small>
+            </div>
+            <div class="registro-boton">
+                <input type="submit" value="Registrarse">
+            </div>
+        </form>
+    </div>
+
+    <script src="{% static 'script.js' %}"></script>
+
+</body>
+</html>
